@@ -1,0 +1,35 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">Espere por favor</div>
+</ng-template>
+
+
+
+
+<div *ngIf="product; else loading" class="grid pt-5 ">
+  <div class="col-12 md:col-12 lg:col-4">
+    <div class="text-center p-3 border-round-sm  font-bold">
+      <img height="280" width="300" [src]="product.image" alt="" />
+    </div>
+  </div>
+  <div class="col-12 md:col-12 lg:col">
+    <div class="text-center p-3 border-round-sm  font-bold">
+      <ul class="text-white" style="list-style: none">
+        <li>
+          <h3>{{ product.title }}</h3>
+        </li>
+        <li>
+          <span class="text-900 font-medium text-sm"
+            >{{ product.rating.rate }}
+          </span>
+          <i class="pi pi-star-fill text-yellow-500"></i>
+        </li>
+        <li>
+          <p>{{ product.description }}</p>
+        </li>
+        <li>Precio: $ {{ product.price }}</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+

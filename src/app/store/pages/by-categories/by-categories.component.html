@@ -1,0 +1,29 @@
+<shared-spinner-loading *ngIf="loading" ></shared-spinner-loading>
+
+
+
+<div *ngIf="loading == false" class="grid nested-grid p-5">
+  <div
+    class="col-12 md:col-4 lg:col-2 text-center"
+    *ngFor="let product of productsListCategories"
+  >
+    <p-card [subheader]="product.title | slice : 0 : 20">
+      <ng-template pTemplate="header">
+        <a  [routerLink]="['/products/by/',product.id]">
+          <p-image height="250" alt="Card" [src]="product.image"></p-image>
+        </a>
+      </ng-template>
+      <ul class="grid" style="list-style: none">
+        <li>
+          <span> Precio: {{ product.price | number }} </span>
+        </li>
+        <li>
+          <span class="text-900 font-medium text-sm"
+            >Ranking: {{ product.rating.rate }}</span
+          >
+          <i class="pi pi-star-fill text-yellow-500"></i>
+        </li>
+      </ul>
+    </p-card>
+  </div>
+</div>

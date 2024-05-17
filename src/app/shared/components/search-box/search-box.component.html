@@ -1,0 +1,13 @@
+<span class="p-input-icon-left">
+  <i class="pi pi-search"></i>
+  <input
+    (keyup.enter)="searchProduct(txtValue.value)"
+    #txtValue
+    name="termSearch"
+    [style]="{ height: '20px' }"
+    type="text"
+    pInputText
+    [(ngModel)]="termSearch"
+
+  />
+</span>

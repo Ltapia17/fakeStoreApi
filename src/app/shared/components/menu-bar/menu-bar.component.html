@@ -1,0 +1,14 @@
+<p-menubar [style]="{'height': '60px'}" [model]="items">
+
+  <ng-template let-item pTemplate="start">
+    <a [routerLink]="['']">
+    <img src="./assets/logo.png" height="40" class="mr-2" />
+  </a>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <shared-search-box></shared-search-box>
+  </ng-template>
+</p-menubar>
+
+
+
